@@ -1,0 +1,5 @@
+-- Question 2
+-- Write and execute a SQL query to list all crimes that took place at a school. Include case number, crime type and community name.
+SELECT CR.CASE_NUMBER, CR.PRIMARY_TYPE, C.COMMUNITY_AREA_NAME, CR.LOCATION_DESCRIPTION
+  FROM CHICAGO_CRIME_DATA CR INNER JOIN CHICAGO_CENSUS_DATA C ON CR.COMMUNITY_AREA_NUMBER = C.COMMUNITY_AREA_NUMBER
+  WHERE CR.LOCATION_DESCRIPTION LIKE '%SCHOOL%';
